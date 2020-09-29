@@ -11,6 +11,10 @@ let valEmail = document.getElementById("validationEmail");
 
 let inputs = document.querySelectorAll("input");
 let password = document.getElementById("password");
+let eMail = document.getElementById("user-name");
+
+let popUp = document.querySelector(".popUp-wrapper");
+let closeButton = document.querySelector(".close");
 
 // global variables for function
 
@@ -20,6 +24,13 @@ let users = [];
 // ----- EVENT LISTENERS -----
 
 password.addEventListener("change", passwordValidation);
+eMail.addEventListener("change", emailValidation);
+
+closeButton.addEventListener("click", () => {
+  popUp.style.display = "none";
+});
+
+// ----- FUNCTIONS -----
 
 function passwordValidation() {
   for (let i = 1; i < validations.length; i++) {
@@ -34,44 +45,52 @@ function passwordValidation() {
   }
 
   let capitals = /[A-Z]/g;
-  let capitalsCheck = passwordToCheck.match(capitals);
 
-  if (capitalsCheck === null) {
-    password.value = "";
-    valCapital.innerHTML =
-      "&#10060; password has to contain at least one capital letter ";
-  }
+  checking(
+    password,
+    capitals,
+    valCapital,
+    "password has to contain at least one capital letter"
+  );
 
   let numbers = /[0-9]/g;
-  let numbersCheck = passwordToCheck.match(numbers);
 
-  if (numbersCheck === null) {
-    password.value = "";
-    valNumber.innerHTML =
-      "&#10060; password has to contain at least one number ";
-  }
+  checking(
+    password,
+    numbers,
+    valNumber,
+    "password has to contain at least one number"
+  );
+
   let specials = /\W/g;
-  let specialsCheck = passwordToCheck.match(specials);
 
-  if (specialsCheck === null) {
-    password.value = "";
-    valSpecial.innerHTML =
-      "&#10060; password has to contain at least one special character ";
-  }
+  checking(
+    password,
+    specials,
+    valSpecial,
+    "password has to contain at least one special character "
+  );
 }
 
 function emailValidation() {
   valEmail.innerHTML = "";
 
-  let emailToCheck = document.getElementById("user-name").value;
   let emailRules = /^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[a-zA-Z0-9]+/g;
-  let emailCheck = emailToCheck.match(emailRules);
-  console.log(emailCheck);
 
-  if (emailCheck === null) {
-    document.getElementById("user-name").value = "";
-    valEmail.innerHTML =
-      "&#10060; input does not correspond to standards for e-mail address ";
+  checking(
+    eMail,
+    emailRules,
+    valEmail,
+    "input does not correspond to standards for e-mail address"
+  );
+}
+
+function checking(element, regExp, validationPlace, message) {
+  let toCheck = element.value;
+  let check = toCheck.match(regExp);
+  if (check === null) {
+    element.value = "";
+    validationPlace.innerHTML = "&#10060;" + message;
   }
 }
 
@@ -109,13 +128,3 @@ function registration() {
 
   //return submit;
 }
-
-// ----- CLOSING POP-UP -----
-
-let popUp = document.getElementsByClassName("popUp-wrapper")[0];
-
-let closeButton = document.getElementsByClassName("close")[0];
-
-closeButton.addEventListener("click", () => {
-  popUp.style.display = "none";
-});
