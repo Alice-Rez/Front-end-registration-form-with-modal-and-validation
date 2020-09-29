@@ -1,50 +1,67 @@
-var gender = "none";
-var users = [];
+// ----- VARIABLES -----
+
+//DOM elements selecting:
+
+let validations = document.getElementsByClassName("validation");
+let valLength = document.getElementById("validationLength");
+let valCapital = document.getElementById("validationCapital");
+let valNumber = document.getElementById("validationNumber");
+let valSpecial = document.getElementById("validationSpecial");
+let valEmail = document.getElementById("validationEmail");
+
+let inputs = document.querySelectorAll("input");
+let password = document.getElementById("password");
+
+// global variables for function
+
+let gender = "none";
+let users = [];
+
+// ----- EVENT LISTENERS -----
+
+password.addEventListener("change", passwordValidation);
 
 function passwordValidation() {
-  document.getElementById("validationLength").innerHTML = "";
-  document.getElementById("validationCapital").innerHTML = "";
-  document.getElementById("validationNumber").innerHTML = "";
-  document.getElementById("validationSpecial").innerHTML = "";
+  for (let i = 1; i < validations.length; i++) {
+    validations[i].innerHTML = "";
+  }
 
-  let passwordToCheck = document.getElementById("password").value;
+  let passwordToCheck = password.value;
 
   if (passwordToCheck.length < 8) {
-    document.getElementById("password").value = "";
-    document.getElementById("validationLength").innerHTML =
-      "&#10060; minimum password length is 8 characters ";
+    password.value = "";
+    valLength.innerHTML = "&#10060; minimum password length is 8 characters ";
   }
 
   let capitals = /[A-Z]/g;
   let capitalsCheck = passwordToCheck.match(capitals);
-  console.log(capitalsCheck);
 
   if (capitalsCheck === null) {
-    document.getElementById("password").value = "";
-    document.getElementById("validationCapital").innerHTML =
+    password.value = "";
+    valCapital.innerHTML =
       "&#10060; password has to contain at least one capital letter ";
   }
 
   let numbers = /[0-9]/g;
   let numbersCheck = passwordToCheck.match(numbers);
-  console.log(numbersCheck);
+
   if (numbersCheck === null) {
-    document.getElementById("password").value = "";
-    document.getElementById("validationNumber").innerHTML =
+    password.value = "";
+    valNumber.innerHTML =
       "&#10060; password has to contain at least one number ";
   }
   let specials = /\W/g;
   let specialsCheck = passwordToCheck.match(specials);
-  console.log(specialsCheck);
+
   if (specialsCheck === null) {
-    document.getElementById("password").value = "";
-    document.getElementById("validationSpecial").innerHTML =
+    password.value = "";
+    valSpecial.innerHTML =
       "&#10060; password has to contain at least one special character ";
   }
 }
 
 function emailValidation() {
-  document.getElementById("validationEmail").innerHTML = "";
+  valEmail.innerHTML = "";
 
   let emailToCheck = document.getElementById("user-name").value;
   let emailRules = /^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[a-zA-Z0-9]+/g;
@@ -53,7 +70,7 @@ function emailValidation() {
 
   if (emailCheck === null) {
     document.getElementById("user-name").value = "";
-    document.getElementById("validationEmail").innerHTML =
+    valEmail.innerHTML =
       "&#10060; input does not correspond to standards for e-mail address ";
   }
 }
