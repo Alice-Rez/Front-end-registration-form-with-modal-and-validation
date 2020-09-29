@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My fancy Form</title>
+    <link rel="stylesheet" href="./styles/style.css" />
+  </head>
+  <body>
+    <main class="form">
+      <h1>Registration</h1>
+      <div class="form-group">
+        <label for="user-name">User Name - E-mail Address</label
+        ><input
+          type="email"
+          name="user-name"
+          id="user-name"
+          onchange="emailValidation()"
+          required
+        />
+        <div class="validation" id="validationEmail"></div>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label
+        ><input
+          type="password"
+          name="password"
+          id="password"
+          onchange="passwordValidation()"
+          required
+        />
+        <div class="validation" id="validationLength"></div>
+        <div class="validation" id="validationCapital"></div>
+        <div class="validation" id="validationNumber"></div>
+        <div class="validation" id="validationSpecial"></div>
+      </div>
+      <fieldset>
+        <legend>Personal</legend>
+        <div class="form-group">
+          <label for="first-name">First Name</label
+          ><input type="text" name="first-name" id="first-name" />
+        </div>
+        <div class="form-group">
+          <label for="last-name">Last Name</label
+          ><input type="text" name="last-name" id="last-name" />
+        </div>
+        <div class="form-group">
+          <label for="age">Age</label
+          ><input type="number" name="age" id="age" />
+        </div>
+        <div class="form-group">
+          <fieldset class="gender">
+            <legend>Gender</legend>
+            <label for="male">Male</label>
+            <input
+              type="radio"
+              name="gender"
+              id="male"
+              value="male"
+              onchange="genderCheck('male')"
+            />
+            <label for="female">Female</label>
+            <input
+              type="radio"
+              name="gender"
+              id="female"
+              value="female"
+              onchange="genderCheck('female')"
+            />
+            <label for="other">Other</label>
+            <input
+              type="radio"
+              name="gender"
+              id="other"
+              value="other"
+              onchange="genderCheck('other')"
+            />
+          </fieldset>
+        </div>
+      </fieldset>
+      <button type="submit" onclick="registration()">Register</button>
+    </main>
+    <div class="popUp-wrapper">
+      <div class="pop-up">
+        <div class="button-wrapper"><button class="close">X</button></div>
+        <h2 id="pop-up"></h2>
+        <p>in our community!</p>
+      </div>
+    <script src="./scripts/script.js"></script>
+  </body>
+</html>
