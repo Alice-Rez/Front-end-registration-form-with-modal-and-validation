@@ -12,22 +12,35 @@ let valEmail = document.getElementById("validationEmail");
 let inputs = document.querySelectorAll("input");
 let password = document.getElementById("password");
 let eMail = document.getElementById("user-name");
+let genderInputs = document.querySelectorAll("[type=radio]");
 
-let popUp = document.querySelector(".popUp-wrapper");
+let submitButton = document.querySelector("[type=submit]");
+
+let popUpWhole = document.querySelector(".popUp-wrapper");
+let popUp = document.getElementById("pop-up");
 let closeButton = document.querySelector(".close");
 
 // global variables for function
 
 let gender = "none";
-let users = [];
+let users = []; // for storing information about all users. Simulates sending data to database.
 
 // ----- EVENT LISTENERS -----
 
 password.addEventListener("change", passwordValidation);
 eMail.addEventListener("change", emailValidation);
 
+for (let input of genderInputs) {
+  input.addEventListener("change", () => {
+    gender = input.value;
+    console.log(gender);
+  });
+}
+
+submitButton.addEventListener("click", registration);
+
 closeButton.addEventListener("click", () => {
-  popUp.style.display = "none";
+  popUpWhole.style.display = "none";
 });
 
 // ----- FUNCTIONS -----
@@ -94,37 +107,31 @@ function checking(element, regExp, validationPlace, message) {
   }
 }
 
-function genderCheck(input) {
-  gender = document.getElementById(`${input}`).value;
-  console.log(gender);
-}
-
 function registration() {
-  let userName = document.getElementById("user-name").value;
-  let password = document.getElementById("password").value;
-  let firstName = document.getElementById("first-name").value;
-  let lastName = document.getElementById("last-name").value;
-  let age = document.getElementById("age").value;
+  let [userName, password, firstName, lastName, age] = inputs;
 
-  let submit = [];
-
-  submit.push(userName, password, firstName, lastName, age, gender);
+  let submit = {
+    userName: userName.value,
+    pwd: password.value,
+    firstName: firstName.value,
+    lastName: lastName.value,
+    age: age.value,
+    gender: gender,
+  };
 
   users.push(submit);
 
   console.log(submit);
   console.log(users);
-  document.getElementById("pop-up").innerHTML = `Welcome ${firstName}`;
-  document.querySelector(".popUp-wrapper").style.display = "grid";
 
-  document.getElementById("user-name").value = "";
-  document.getElementById("password").value = "";
-  document.getElementById("first-name").value = "";
-  document.getElementById("last-name").value = "";
-  document.getElementById("age").value = "";
+  popUp.textContent = `Welcome ${firstName.value}`;
+  popUpWhole.style.display = "grid";
+
+  for (let input of inputs) {
+    input.value = "";
+  }
+
   document.querySelector('input[name="gender"]:checked').checked = false;
 
   return users;
-
-  //return submit;
 }
