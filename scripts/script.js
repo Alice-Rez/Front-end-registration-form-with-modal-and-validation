@@ -19,6 +19,8 @@ let error = document.querySelector(".error");
 let submitButton = document.querySelector("[type='submit']");
 
 let popUpWhole = document.querySelector(".popUp-wrapper");
+let message = document.querySelector(".message");
+let loader = document.querySelector(".loader");
 let popUp = document.getElementById("pop-up");
 let closeButton = document.querySelector(".close");
 
@@ -116,11 +118,14 @@ function submission(event) {
     error.style.display = "block";
   } else {
     error.style.display = "none";
+    popUpWhole.style.display = "grid";
     registration();
   }
 }
 
 function registration() {
+  loader.style.display = "block";
+
   let [userName, password, firstName, lastName, age] = inputs;
 
   let submit = {
@@ -138,7 +143,8 @@ function registration() {
   console.log(users);
 
   popUp.textContent = `Welcome ${firstName.value}`;
-  popUpWhole.style.display = "grid";
+
+  setTimeout(simulateLoading, 2000);
 
   for (let input of inputs) {
     input.value = "";
@@ -147,4 +153,9 @@ function registration() {
   document.querySelector('input[name="gender"]:checked').checked = false;
 
   return users;
+}
+
+function simulateLoading() {
+  loader.style.display = "none";
+  message.style.display = "block";
 }

@@ -140,6 +140,14 @@ button {
   box-shadow: 5px 5px 5px var(--grey-dark);
 }
 
+.loader {
+  text-align: center;
+}
+
+.message {
+  display: none;
+}
+
 h2 {
   /* font-family: "Kanit", sans-serif; */
   font-weight: 900;
