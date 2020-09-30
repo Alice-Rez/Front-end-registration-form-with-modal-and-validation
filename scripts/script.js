@@ -9,12 +9,14 @@ let valNumber = document.getElementById("validationNumber");
 let valSpecial = document.getElementById("validationSpecial");
 let valEmail = document.getElementById("validationEmail");
 
-let inputs = document.querySelectorAll("input");
+let inputs = document.querySelectorAll("input:not([type='radio'])");
 let password = document.getElementById("password");
 let eMail = document.getElementById("user-name");
-let genderInputs = document.querySelectorAll("[type=radio]");
+let genderInputs = document.querySelectorAll("[type='radio']");
 
-let submitButton = document.querySelector("[type=submit]");
+let error = document.querySelector(".error");
+
+let submitButton = document.querySelector("[type='submit']");
 
 let popUpWhole = document.querySelector(".popUp-wrapper");
 let popUp = document.getElementById("pop-up");
@@ -37,7 +39,7 @@ for (let input of genderInputs) {
   });
 }
 
-submitButton.addEventListener("click", registration);
+submitButton.addEventListener("click", submission);
 
 closeButton.addEventListener("click", () => {
   popUpWhole.style.display = "none";
@@ -88,7 +90,7 @@ function passwordValidation() {
 function emailValidation() {
   valEmail.innerHTML = "";
 
-  let emailRules = /^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[a-zA-Z0-9]+/g;
+  let emailRules = /^[\w-\.]+@[a-zA-Z0-9]+\.[a-zA-Z0-9]+/g;
 
   checking(
     eMail,
@@ -101,9 +103,20 @@ function emailValidation() {
 function checking(element, regExp, validationPlace, message) {
   let toCheck = element.value;
   let check = toCheck.match(regExp);
+  console.log(check);
   if (check === null) {
     element.value = "";
     validationPlace.innerHTML = "&#10060;" + message;
+  }
+}
+
+function submission(event) {
+  event.preventDefault();
+  if (!eMail.checkValidity() || !password.checkValidity()) {
+    error.style.display = "block";
+  } else {
+    error.style.display = "none";
+    registration();
   }
 }
 

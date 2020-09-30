@@ -7,73 +7,67 @@
     <link rel="stylesheet" href="./styles/style.css" />
   </head>
   <body>
-    <main class="form">
-      <h1>Registration</h1>
-      <div class="form-group">
-        <label for="user-name">User Name - E-mail Address</label
-        ><input
-          type="email"
-          name="user-name"
-          id="user-name"
-          required
-        />
-        <div class="validation" id="validationEmail"></div>
-      </div>
-      <div class="form-group">
-        <label for="password">Password</label
-        ><input
-          type="password"
-          name="password"
-          id="password"
-          required
-        />
-        <div class="validation" id="validationLength"></div>
-        <div class="validation" id="validationCapital"></div>
-        <div class="validation" id="validationNumber"></div>
-        <div class="validation" id="validationSpecial"></div>
-      </div>
-      <fieldset>
-        <legend>Personal</legend>
+    <main>
+      <form class="form">
+        <h1>Registration</h1>
         <div class="form-group">
-          <label for="first-name">First Name</label
-          ><input type="text" name="first-name" id="first-name" />
+          <label for="user-name">User Name - E-mail Address</label
+          ><input
+            type="email"
+            name="user-name"
+            id="user-name"
+            placeholder="example@email.org"
+            required
+          />
+          <span class="require"></span>
+          <p class="validation" id="validationEmail"></p>
         </div>
         <div class="form-group">
-          <label for="last-name">Last Name</label
-          ><input type="text" name="last-name" id="last-name" />
+          <label for="password">Password</label>
+          <div class="input-wrapper">
+            <div class="input-wrapper">
+              <input type="password" name="password" id="password" required />
+              <span class="require"></span>
+            </div>
+          </div>
+          <p class="validation" id="validationLength"></p>
+          <p class="validation" id="validationCapital"></p>
+          <p class="validation" id="validationNumber"></p>
+          <p class="validation" id="validationSpecial"></p>
         </div>
-        <div class="form-group">
-          <label for="age">Age</label
-          ><input type="number" name="age" id="age" />
-        </div>
-        <div class="form-group">
-          <fieldset class="gender">
-            <legend>Gender</legend>
-            <label for="male">Male</label>
-            <input
-              type="radio"
-              name="gender"
-              id="male"
-              value="male"
-            />
-            <label for="female">Female</label>
-            <input
-              type="radio"
-              name="gender"
-              id="female"
-              value="female"
-            />
-            <label for="other">Other</label>
-            <input
-              type="radio"
-              name="gender"
-              id="other"
-              value="other"
-            />
-          </fieldset>
-        </div>
-      </fieldset>
-      <button type="submit">Register</button>
+        <fieldset class="personal">
+          <legend>Personal</legend>
+          <div class="form-group">
+            <label for="first-name">First Name</label>
+            <input type="text" name="first-name" id="first-name" />
+          </div>
+          <div class="form-group">
+            <label for="last-name">Last Name</label>
+            <div class="input-wrapper">
+              <input type="text" name="last-name" id="last-name" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="age">Age</label>
+            <div class="input-wrapper">
+              <input type="number" name="age" id="age" />
+            </div>
+          </div>
+          <div class="form-group">
+            <fieldset class="gender">
+              <legend>Gender</legend>
+              <label for="male">Male</label>
+              <input type="radio" name="gender" id="male" value="male" />
+              <label for="female">Female</label>
+              <input type="radio" name="gender" id="female" value="female" />
+              <label for="other">Other</label>
+              <input type="radio" name="gender" id="other" value="other" />
+            </fieldset>
+          </div>
+        </fieldset>
+        <p class="error">Please fill out required fields!</p>
+        <button type="submit">Register</button>
+      </form>
     </main>
     <div class="popUp-wrapper">
       <div class="pop-up">
@@ -81,6 +75,7 @@
         <h2 id="pop-up"></h2>
         <p>in our community!</p>
       </div>
+    </div>
     <script src="./scripts/script.js"></script>
   </body>
 </html>
