@@ -1,13 +1,17 @@
 Problems - Tasks:
 
-1. do my own loader in SVG instead of some from the web
+- do my own loader in SVG instead of some from the web
 
-2. use different sizes of background images for different screen sizes (for mobile just black)
+- use different sizes of background images for different screen sizes (for mobile just black)
 
-3. make background image same for most of the sizes - place it correctly
+- make background image same for most of the sizes - place it correctly
 
-4. add transitions to appearing/disappearing pop-up
+- add transitions to appearing/disappearing pop-up
 
-5. Write good readme for GH
+- add box-shadow to the registration form
 
-6. upload at GH (ideally at Fr/Sa/Su)
+- put the copyright/made by to the footer?
+
+- Write good readme for GH
+
+- upload at GH (ideally at Fr/Sa/Su)
