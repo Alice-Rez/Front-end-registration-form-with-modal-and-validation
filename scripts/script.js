@@ -45,6 +45,7 @@ submitButton.addEventListener("click", submission);
 
 closeButton.addEventListener("click", () => {
   popUpWhole.style.display = "none";
+  message.style.display = "none";
 });
 
 // ----- FUNCTIONS -----
