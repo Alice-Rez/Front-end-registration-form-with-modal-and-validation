@@ -65,22 +65,28 @@
             </fieldset>
           </div>
         </fieldset>
-        <p class="error">Please fill out required (*) fields!</p>
+        <div class="form-group">
+          <input type="checkbox" name="agree" id="agree" required />
+          <label for="agree">I agree with conditions of use</label>
+        </div>
+        <p class="error">
+          Please fill out required (*) fields and agree with our conditions!
+        </p>
         <button type="submit">Register</button>
       </form>
-      <div class="popUp-wrapper">
-        <div class="pop-up">
-          <div class="button-wrapper"><button class="close">X</button></div>
-          <figure class="loader">
-            <img class="loader" src="./images/loader.gif" alt="loader" />
-          </figure>
-          <div class="message">
-            <h2 id="pop-up"></h2>
-            <p>in our community!</p>
-          </div>
+    </main>
+    <div class="popUp-wrapper">
+      <div class="pop-up">
+        <div class="button-wrapper"><button class="close">X</button></div>
+        <figure class="loader">
+          <img class="loader" src="./images/loader.gif" alt="loader" />
+        </figure>
+        <div class="message">
+          <h2 id="pop-up"></h2>
+          <p>in our community!</p>
         </div>
       </div>
-    </main>
+    </div>
     <footer>
       <p>
         &#169;2020 Made by

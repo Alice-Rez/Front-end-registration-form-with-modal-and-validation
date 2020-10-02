@@ -13,6 +13,7 @@ let inputs = document.querySelectorAll("input:not([type='radio'])");
 let password = document.getElementById("password");
 let eMail = document.getElementById("user-name");
 let genderInputs = document.querySelectorAll("[type='radio']");
+let agreement = document.getElementById("agree");
 
 let error = document.querySelector(".error");
 
@@ -37,16 +38,12 @@ eMail.addEventListener("change", emailValidation);
 for (let input of genderInputs) {
   input.addEventListener("change", () => {
     gender = input.value;
-    console.log(gender);
   });
 }
 
 submitButton.addEventListener("click", submission);
 
-closeButton.addEventListener("click", () => {
-  popUpWhole.style.display = "none";
-  message.style.display = "none";
-});
+closeButton.addEventListener("click", hidePopUp);
 
 // ----- FUNCTIONS -----
 
@@ -109,17 +106,24 @@ function checking(element, regExp, validationPlace, message) {
   console.log(check);
   if (check === null) {
     element.value = "";
-    validationPlace.innerHTML = "&#10060; " + message;
+    validationPlace.innerHTML = "&#10060;" + message;
   }
 }
 
 function submission(event) {
   event.preventDefault();
-  if (!eMail.checkValidity() || !password.checkValidity()) {
+  if (
+    !eMail.checkValidity() ||
+    !password.checkValidity() ||
+    !agreement.checkValidity()
+  ) {
     error.style.display = "block";
   } else {
     error.style.display = "none";
     popUpWhole.style.display = "grid";
+    setTimeout(() => {
+      popUpWhole.style.opacity = "1.0";
+    }, 50);
     registration();
   }
 }
@@ -151,7 +155,11 @@ function registration() {
     input.value = "";
   }
 
-  document.querySelector('input[name="gender"]:checked').checked = false;
+  let checked = document.querySelectorAll("input:checked");
+
+  for (let item of checked) {
+    item.checked = false;
+  }
 
   return users;
 }
@@ -159,4 +167,16 @@ function registration() {
 function simulateLoading() {
   loader.style.display = "none";
   message.style.display = "block";
+  setTimeout(() => {
+    message.style.opacity = "1.0";
+  }, 50);
+}
+
+function hidePopUp() {
+  popUpWhole.style.opacity = "0.0";
+  message.style.opacity = "0.0";
+  setTimeout(() => {
+    popUpWhole.style.display = "none";
+    message.style.display = "none";
+  }, 500);
 }

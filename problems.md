@@ -6,7 +6,7 @@ Problems - Tasks:
 
 - make background image same for most of the sizes - place it correctly
 
-- add transitions to appearing/disappearing pop-up
+- is it better to make validation on change (when user fill just )
 
 - Write good readme for GH
 

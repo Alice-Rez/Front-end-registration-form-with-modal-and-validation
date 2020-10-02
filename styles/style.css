@@ -57,7 +57,8 @@ h1 {
   text-align: center;
 }
 
-.form-group {
+.form-group,
+fieldset {
   margin-bottom: 1em;
 }
 
@@ -65,7 +66,7 @@ h1 {
   width: 100%;
 }
 
-input:not([type="radio"]) {
+input:not([type="radio"]):not([type="checkbox"]) {
   font-size: 1em;
   padding: 0.5em;
   margin-top: 0.5em;
@@ -135,7 +136,9 @@ input::placeholder {
   width: 100vw;
   height: 100vh;
   display: none;
+  opacity: 0;
   background-color: var(--grey-dark-rgba);
+  transition: opacity 500ms 50ms ease-out;
 }
 
 .pop-up {
@@ -157,10 +160,11 @@ input::placeholder {
 
 .message {
   display: none;
+  opacity: 0;
+  transition: opacity 500ms 50ms ease-out;
 }
 
 h2 {
-  /* font-family: "Kanit", sans-serif; */
   font-weight: 900;
   font-size: 2.5rem;
   color: var(--primary-dark);
