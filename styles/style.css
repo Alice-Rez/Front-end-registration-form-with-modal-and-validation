@@ -49,6 +49,7 @@ button {
   padding: 2em 3em;
   border-radius: 10px;
   display: grid;
+  box-shadow: 5px 5px 10px rgba(16, 16, 15, 0.5);
 }
 
 h1 {
@@ -122,6 +123,10 @@ button {
   border-radius: 5px;
 }
 
+input::placeholder {
+  font-family: "Kanit", sans-serif;
+}
+
 .popUp-wrapper {
   position: fixed;
   top: 0;
@@ -185,9 +190,11 @@ h2 {
 footer {
   font-family: "Kanit", sans-serif;
   text-align: center;
+  color: var(--primary-dark);
 }
 
 .logo {
   width: 13%;
   transform: translateY(40%);
+  fill: red;
 }

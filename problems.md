@@ -8,10 +8,6 @@ Problems - Tasks:
 
 - add transitions to appearing/disappearing pop-up
 
-- add box-shadow to the registration form
-
-- put the copyright/made by to the footer?
-
 - Write good readme for GH
 
 - upload at GH (ideally at Fr/Sa/Su)
