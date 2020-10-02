@@ -27,9 +27,8 @@ body {
   margin: 0;
   padding: 3em 0 1em;
   background-image: url("../images/hero-image.jpg");
-  /* background-repeat: no-repeat;
-  background-size: cover;
-  background-position: 10% top; */
+  background-repeat: no-repeat;
+  background-position: 47% center;
   display: grid;
   justify-items: center;
   align-content: space-between;
@@ -201,4 +200,36 @@ footer {
   width: 13%;
   transform: translateY(40%);
   fill: red;
+}
+
+/* JUST FOR RIGHT POSITION OF THE EYES :D */
+
+@media screen and (min-width: 1024px) {
+  body {
+    background-position: 46% top;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  body {
+    background-position: 44% top;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  body {
+    background-position: 42% top;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  body {
+    background-position: 34% top;
+  }
+}
+
+@media screen and (min-width: 1800px) {
+  body {
+    background-position: 24% top;
+  }
 }
