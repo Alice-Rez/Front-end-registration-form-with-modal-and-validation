@@ -109,7 +109,7 @@ function checking(element, regExp, validationPlace, message) {
   console.log(check);
   if (check === null) {
     element.value = "";
-    validationPlace.innerHTML = "&#10060;" + message;
+    validationPlace.innerHTML = "&#10060; " + message;
   }
 }
 
