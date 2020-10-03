@@ -53,9 +53,10 @@ function passwordValidation() {
   }
 
   let passwordToCheck = password.value;
+  let valid = true;
 
   if (passwordToCheck.length < 8) {
-    password.value = "";
+    valid = false;
     valLength.innerHTML = "&#10060; minimum password length is 8 characters ";
   }
 
@@ -85,6 +86,10 @@ function passwordValidation() {
     valSpecial,
     "password has to contain at least one special character "
   );
+
+  if (!valid) {
+    password.value = "";
+  }
 }
 
 function emailValidation() {
@@ -105,8 +110,9 @@ function checking(element, regExp, validationPlace, message) {
   let check = toCheck.match(regExp);
   console.log(check);
   if (check === null) {
-    element.value = "";
+    valid = false;
     validationPlace.innerHTML = "&#10060;" + message;
+    return valid;
   }
 }
 
