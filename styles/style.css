@@ -80,7 +80,7 @@ input:required ~ span::before {
 }
 
 .personal input:not([type="radio"]),
-.personal fieldset {
+.gender {
   width: 100%;
 }
 
@@ -153,7 +153,7 @@ input::placeholder {
   text-align: center;
 }
 
-.loader {
+.loader img {
   transform: rotate(-90deg);
 }
 
