@@ -191,13 +191,14 @@ h2 {
 }
 
 footer {
+  width: 100%;
   font-family: "Kanit", sans-serif;
   text-align: center;
   color: var(--primary-dark);
 }
 
 .logo {
-  width: 13%;
+  width: 2%;
   transform: translateY(40%);
 }
 
