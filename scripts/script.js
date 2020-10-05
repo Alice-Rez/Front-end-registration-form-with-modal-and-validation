@@ -32,8 +32,8 @@ let users = []; // for storing information about all users. Simulates sending da
 
 // ----- EVENT LISTENERS -----
 
-password.addEventListener("change", passwordValidation);
-eMail.addEventListener("change", emailValidation);
+password.addEventListener("keyup", passwordValidation);
+eMail.addEventListener("keyup", emailValidation);
 
 for (let input of genderInputs) {
   input.addEventListener("change", () => {
@@ -53,10 +53,8 @@ function passwordValidation() {
   }
 
   let passwordToCheck = password.value;
-  let valid = true;
 
   if (passwordToCheck.length < 8) {
-    valid = false;
     valLength.innerHTML = "&#10060; minimum password length is 8 characters ";
   }
 
@@ -86,10 +84,6 @@ function passwordValidation() {
     valSpecial,
     "password has to contain at least one special character "
   );
-
-  if (!valid) {
-    password.value = "";
-  }
 }
 
 function emailValidation() {
@@ -110,9 +104,7 @@ function checking(element, regExp, validationPlace, message) {
   let check = toCheck.match(regExp);
   console.log(check);
   if (check === null) {
-    valid = false;
     validationPlace.innerHTML = "&#10060;" + message;
-    return valid;
   }
 }
 
