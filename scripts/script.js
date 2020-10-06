@@ -32,8 +32,8 @@ let users = []; // for storing information about all users. Simulates sending da
 
 // ----- EVENT LISTENERS -----
 
-password.addEventListener("keyup", passwordValidation);
-eMail.addEventListener("keyup", emailValidation);
+password.addEventListener("input", passwordValidation);
+eMail.addEventListener("input", emailValidation);
 
 for (let input of genderInputs) {
   input.addEventListener("change", () => {
