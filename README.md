@@ -4,7 +4,7 @@
 
 ## Description
 
-Small project done cca in half of my one-year course (after finishing with Vanilla JS in browser module). Registration form with implemented validation of the e-mail address and password, pop-upped modal with loader (as simulation to waiting for the data to be successfully sent) replaced later by welcoming message and simulation of the data collecting. The form cannot be submitted without filling the required inputs and agreement with the conditions.
+Small project done cca in half of my one-year course (after finishing with Vanilla JS in browser module, before starting Node.js and frameworks). Registration form with implemented validation of the e-mail address and password, pop-upped modal with loader (as simulation to waiting for the data to be successfully sent) replaced later by welcoming message and simulation of the data collecting. The form cannot be submitted without filling the required inputs and agreement with the conditions.
 
 E-mail address have to contain @, at least one letter before it and after it, dot after it and another at least one letter after dot. Password has to be at least 8 character long with one capital, one number and one special character used.
 
