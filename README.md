@@ -16,6 +16,8 @@ At the end of validation, if the password was not correct, the input for the pas
 
 The simulation of the data collecting is done by storing all inputs about user in one object (_submit_) and than adding this object in array of users (_users_).
 
+<img align="right" src="./images-readme/form3.png" width="50%">
+
 ## Implementation
 
 **Used technologies**: Vanilla JS, DOM, RegExp, array destructuring, HTML, CSS, CSS variables
