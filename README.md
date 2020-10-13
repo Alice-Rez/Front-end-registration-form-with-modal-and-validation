@@ -26,4 +26,8 @@ RegExp were used for validation of the e-mail and password (check if it correspo
 
 </br>
 
+</br>
+
+</br>
+
 <img align="right" src="./images-readme/form4.png" width="50%">
