@@ -1,8 +1,8 @@
-# Front-end registration form with modal and validation
-
-[Live Demo](https://alice-rez.github.io/Front-end-registration-form-with-modal-and-validation/)
+<h1><img align="center" src="./images-readme/title.png" width="100%"> </h1>
 
 ## Description
+
+[Live Demo](https://alice-rez.github.io/Front-end-registration-form-with-modal-and-validation/)
 
 Small project done cca in half of my one-year course (after finishing with Vanilla JS in browser module, before starting Node.js and frameworks). Demo of the registration form with implemented validation of the e-mail address and password, pop-upped modal with loader (as simulation to waiting for the data to be successfully sent) replaced later by welcoming message and simulation of the data collecting. Without using server side. The form cannot be submitted without filling the required inputs and agreement with the conditions.
 
