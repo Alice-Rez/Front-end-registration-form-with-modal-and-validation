@@ -20,6 +20,8 @@ RegExp were used for validation of the e-mail and password (check if it correspo
 
 Event for validation is input, so the user immediately see, if the e-mail/password are correct or not.
 
+According to responsiveness, emphasis was placed at correct positioning of the background image, so the eyes are still approximately at the same place
+
 ## Gallery
 
 **Fig.1** : Validation of the e-mail and password - display of error messages
