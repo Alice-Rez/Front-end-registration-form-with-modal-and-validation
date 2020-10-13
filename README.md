@@ -23,3 +23,5 @@ The simulation of the data collecting is done by storing all inputs about user i
 **Used technologies**: Vanilla JS, DOM, RegExp, array destructuring, HTML, CSS, CSS variables
 
 RegExp were used for validation of the e-mail and password (check if it corresponds the rules). Array destructuring was used for assignment of the different inputs to different variables (from array of all inputs).
+
+<img align="right" src="./images-readme/form4.png" width="50%">
